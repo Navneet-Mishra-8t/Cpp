@@ -1,21 +1,21 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int factorial(int num){
-    int var = 1;
-    for(int i=2;i<num+1;i++){
-        var=var*i;
+int factorial(int num){ 
+    int fact=1;
+    for(int i=2;i<=num;i++){
+        fact *= i;
     }
-    return var;
-    
-};
+    return fact;
+}
 
 int main(){
     int n;
+    cout<<"Number: ";
     cin>>n;
 
-    cout<<"Factorial: "<<endl;
-    cout<<factorial(n);
+    cout<<"Factorial: "<<factorial(n);
 
     return 0;
 }
+
