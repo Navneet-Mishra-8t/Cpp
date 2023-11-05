@@ -1,52 +1,51 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int great(int a,int b,int c){
-    int grt=0;
-    if(a>b){
-        if(a>c){
-            grt = a;
-        }else{
-            grt = c;
-        }
-    }else if(a<b){
-        if(b>c){
-            grt = b;
-        }else{
-            grt = c;
-        }
-    }
-    return grt;
-};
+bool pytha_check(int a, int b, int c){
+    /*(a^2+b^2=c^2)*/
 
-int pytha(int greatInt, int b, int c){
-    //formula
-    //a*a=(b*b)+(c*c)
-    int lhs = (greatInt*greatInt);
-    int rhs = ((b*b)+(c*c));
+    int basper = ((a*a)+(b*b));
+    int hypo = (c*c);
 
-    if(lhs==rhs){
-        cout<<"Pythagorean Triplets";
+    if(basper==hypo){
+        return true; // '1'
     }else{
-        cout<<"Non-Pythagorean Triplets";
+        return false; // '0'
     }
-    return 0;
-};
+}
 
 int main(){
-    int a,b,c;
+    int a,b,c; //Ex-(3,4,5)
+    cout<<"Pythagorean Triplets: ";
     cin>>a>>b>>c;
 
-    int gret = great(a,b,c);
-    if(gret==a){
-        pytha(a,b,c);
-    }else if(gret == b){
-        pytha(b,a,c);
+    if(a>b){
+        if(a>c){
+            if(pytha_check(b,c,a)==true){
+                cout<<"Pythagorean Triplets!!"<<endl;
+            }else{
+                cout<<"Non-Pythagorean!!"<<endl;
+            }
+        }
+    }else if(b>a){
+        if(b>c){
+            if(pytha_check(a,c,b)==true){
+                cout<<"Pythagorean  Triplets!!"<<endl;
+            }else{
+                cout<<"Non-Pythagorean!!"<<endl;
+            }
+        }
+    }else if(c>a){
+        if(c>b){
+            if(pytha_check(b,a,c)==true){
+                cout<<"Pythagorean Triplets!!"<<endl;
+            }else{
+                cout<<"Non-Pythagorean!!"<<endl;
+            }
+        }
     }else{
-        pytha(c,a,b);
+        cout<<"Not Recognised!!"<<endl;
     }
-
+    
     return 0;
-
 }
- 
