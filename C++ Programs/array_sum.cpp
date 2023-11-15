@@ -2,8 +2,14 @@
 
 using namespace std;
 
-int array_sum(int arr[], int n){
+/*
+Dynamic Memory Allocation:
 
+Allocate memory for an array of integers using new and initialize it with user input.
+Allocate memory for a string dynamically and concatenate it with another string.
+*/
+
+int array_sum(int arr[], int n){
 	int sum = 0;
 	for(int i = 0; i < n; i++){
 		sum += arr[i];
@@ -12,19 +18,22 @@ int array_sum(int arr[], int n){
 	return sum;
 }
 
-
 int main(){
 	int n;
-	cout << "Size Of Array: ";
+	cout << "Size Of The Array: ";
 	cin >> n;
 
 	int *arr = new int[n];
 
+	cout << "Elements: ";
 	for(int i = 0; i < n; i++){
 		cin >> arr[i];
 	}
 
-	cout << "Sum Of All Elements Of The Array: " << array_sum(arr, n);
+	cout << "Sum: " << array_sum(arr, n);
+
+	delete[] arr;
+	arr = NULL;
 
 	return 0;
 }
