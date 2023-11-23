@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 //1,2,3,4,5
+//this code is not good practice 
+//good practice of this code is in 'reverse_arr_ptr.cpp'
+
 void reverse(int array[], int size){
     int start = 0;
     int end = (size-1);//5
@@ -23,6 +27,7 @@ int main(){
     int n;
     cin>>n;
 
+//initializing array like this is not good practice
     int arr[n];
     for(int i=0;i<n;i++){
         cin>>arr[i];
